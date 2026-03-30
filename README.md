@@ -22,7 +22,7 @@
 ### Frontend
 
 * HTML, CSS, JavaScript
-* React.js (if used)
+* React.js 
 
 ### Backend
 
