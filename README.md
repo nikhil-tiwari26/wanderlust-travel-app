@@ -1,28 +1,23 @@
-# 🌍 Wanderlust - Travel Booking Web App
+# 🌍 Wanderlust - Full Stack Travel Listing & Booking App
 
-🚀 **Wanderlust** is a full-stack travel booking web application that allows users to explore destinations, view listings, and book stays seamlessly.
+🚀 Wanderlust is a full-stack travel web application where users can explore listings, create their own stays, and add reviews. It includes authentication, session management, and a dynamic UI using EJS templates.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-* 🔐 **User Authentication** (Signup / Login / Logout)
-* 🏨 **Explore Listings** (Hotels, stays, destinations)
-* 🔍 **Search Functionality**
-* 📅 **Booking System**
-* ⭐ **Reviews & Ratings**
-* 📸 **Image Uploads**
-* 🧑‍💼 **User Dashboard**
-* 📱 **Responsive UI**
+* 🔐 User Authentication (Signup / Login / Logout using Passport.js)
+* 🏨 Create, Edit & Delete Listings
+* ⭐ Add & Manage Reviews
+* 📸 Upload & Display Images
+* 🔔 Flash Messages for user feedback
+* 🧑‍💼 Session-based Authentication
+* ⚡ Error Handling with custom middleware
+* 📱 Responsive UI using EJS + Bootstrap
 
 ---
 
 ## 🛠️ Tech Stack
-
-### Frontend
-
-* HTML, CSS, JavaScript
-* React.js 
 
 ### Backend
 
@@ -31,100 +26,125 @@
 
 ### Database
 
-* MongoDB
+* MongoDB (Mongoose)
+
+### Authentication
+
+* Passport.js (Local Strategy)
+
+### Templating Engine
+
+* EJS + EJS-Mate
 
 ### Other Tools
 
-* Cloudinary (for image upload)
-* JWT (for authentication)
+* express-session
+* connect-flash
+* method-override
+* dotenv
 
 ---
 
 ## 📂 Project Structure
 
-```
+```id="2p6z6y"
 wanderlust/
 │
-├── models/        # Database schemas
-├── routes/        # API routes
-├── controllers/   # Business logic
-├── views/         # Frontend templates / UI
-├── public/        # Static files
-├── utils/         # Helper functions
-├── app.js         # Main server file
-├── .env           # Environment variables
+├── models/          # Mongoose schemas (User, Listing, Review)
+├── routes/          # Route handlers (listing, review, user)
+├── utils/           # Custom utilities (ExpressError)
+├── views/           # EJS templates
+├── public/          # Static files (CSS, JS, images)
+├── app.js           # Main server file
+├── .env             # Environment variables
 ├── package.json
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Environment Variables
+
+Create a `.env` file in root directory:
+
+```id="z2y6ak"
+NODE_ENV=development
+PORT=3000
+MONGO_URL=mongodb://127.0.0.1:27017/wanderlust
+SESSION_SECRET=your_secret_key
+```
+
+---
+
+## 🚀 Installation & Setup
 
 ### 1️⃣ Clone the repository
 
-```bash
+```bash id="vbdjvb"
 git clone https://github.com/your-username/wanderlust-mern.git
 cd wanderlust-mern
 ```
 
 ### 2️⃣ Install dependencies
 
-```bash
+```bash id="8f5y5z"
 npm install
 ```
 
-### 3️⃣ Setup environment variables
+### 3️⃣ Start MongoDB
 
-Create a `.env` file and add:
+Make sure MongoDB is running locally
+
+---
+
+### 4️⃣ Run the server
+
+```bash id="hf6czl"
+node app.js
+```
+
+👉 App will run on:
 
 ```
-PORT=5000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
+http://localhost:3000
 ```
 
-### 4️⃣ Run the project
+---
 
-```bash
-npm start
-```
+## 🔐 Authentication Flow
+
+* Uses Passport.js Local Strategy
+* Passwords are hashed securely
+* Sessions are stored using express-session
+* Flash messages provide login/signup feedback
+
+---
+
+## ⚡ Error Handling
+
+* Custom error class (`ExpressError`)
+* Centralized error middleware
+* 404 handling for unknown routes
 
 ---
 
 
 
-## 🚀 Future Improvements
+## 🌐 Future Improvements
 
 * 💳 Payment Integration (Stripe)
-* 💬 Real-time Chat
-* 🤖 AI-based Travel Recommendations
-* 📍 Map Integration
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-Feel free to fork this repo and submit a pull request.
-
----
-
-## 📌 Lessons Learned
-
-* Built a full-stack MERN application from scratch
-* Learned authentication, API handling, and database integration
-* Improved debugging and problem-solving skills
+* ☁️ Cloud image storage (Cloudinary)
+* 📍 Map integration (Mapbox)
+* 💬 Real-time chat system
 
 ---
 
 ## 👨‍💻 Author
 
 **Nikhil Tiwari**
-📧 nikhilt6395@gmail.com
-🔗 GitHub:https://github.com/nikhil-tiwari26
+🔗 GitHub: https://github.com/nikhil-tiwari26
 
 ---
 
-## ⭐ Show Your Support
+## ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub!
